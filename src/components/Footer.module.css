@@ -1,0 +1,95 @@
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.ctaParams {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-white);
+}
+
+.subtitle {
+    color: var(--text-light);
+    /* Will be lighter on dark bg, maybe adjust var? */
+    color: #A0AEC0;
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--spacing-lg);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.tagline {
+    color: #718096;
+    font-size: 0.875rem;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #CBD5E0;
+    transition: color 0.2s;
+}
+
+.contactLink:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    text-align: center;
+    color: #4A5568;
+    font-size: 0.875rem;
+    margin-top: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+    .bottom {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .contact {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+}

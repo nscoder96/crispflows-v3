@@ -1,0 +1,304 @@
+/* Main Container */
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0A0A0A;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Center Overlay */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 30;
+  /* Higher than sides */
+  width: 100%;
+  max-width: 900px;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  color: white;
+}
+
+.title {
+  font-size: 5rem;
+  /* Larger title */
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  color: white;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Split Layout */
+.splitLayout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.side {
+  flex: 1;
+  position: relative;
+  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center horizontally by default */
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Hover Effects */
+.splitLayout:hover .side {
+  flex: 0.8;
+  filter: brightness(0.7) blur(1px);
+  /* Slight blur to non-focused side */
+}
+
+.splitLayout .side:hover {
+  flex: 1.4;
+  filter: brightness(1) blur(0);
+}
+
+/* Specific Sides */
+.left {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.right {
+  background: #020617;
+  /* Even darker blue */
+  color: #FFFFFF;
+}
+
+/* Background Patterns */
+.bgPatternLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Subtle geometric pattern or gradient */
+  background: radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.bgPatternRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  /* Glowing burst effect */
+  background:
+    radial-gradient(circle at 60% 50%, rgba(56, 189, 248, 0.15), transparent 60%),
+    radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+/* Content within sides */
+.sideContent {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Changed from center to flex-start */
+  align-items: center;
+  /* Center main content */
+  padding-top: 12vh;
+  /* Move content up significantly */
+  opacity: 1;
+  transition: transform 0.4s ease;
+}
+
+.side:hover .sideContent {
+  transform: translateY(-10px) scale(1.02);
+  /* Slight lift on hover */
+}
+
+.heroTextLeft,
+.heroTextRight {
+  text-align: center;
+  position: relative;
+  z-index: 20;
+}
+
+/* Typography polish */
+.label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.heading {
+  font-size: 4rem;
+  /* Bigger headers */
+  font-weight: 800;
+  line-height: 0.9;
+  margin-bottom: 40px;
+  letter-spacing: -0.03em;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 16px 32px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+/* Explicit Hover States for Buttons */
+.side:hover .cta {
+  /* Base transition handled by specific sides */
+}
+
+.left:hover .cta {
+  background: #000000;
+  color: #FFFFFF;
+  border-color: #000000;
+}
+
+.right:hover .cta {
+  background: #FFFFFF;
+  color: #0F172A;
+  border-color: #FFFFFF;
+}
+
+
+/* Decorative Menus (The "Interface" look) */
+.decorativeMenuLeft {
+  position: absolute;
+  left: 40px;
+  bottom: 10vh;
+  /* Moved to bottom to balance the top content */
+  top: auto;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0.6;
+  /* Subtle */
+  pointer-events: none;
+  text-align: left;
+}
+
+.decorativeMenuRight {
+  position: absolute;
+  right: 40px;
+  bottom: 10vh;
+  /* Moved to bottom */
+  top: auto;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+  /* Align right */
+  opacity: 0.7;
+  /* Slightly brighter on dark */
+  pointer-events: none;
+  text-align: right;
+}
+
+.menuItem {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Floating Dock at Bottom */
+.dock {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 40;
+}
+
+.dockItem {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .splitLayout {
+    flex-direction: column;
+  }
+
+  .center {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    padding: 50px 20px 30px;
+    background: #000;
+    mix-blend-mode: normal;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .splitLayout:hover .side,
+  .splitLayout .side:hover {
+    flex: 1;
+    filter: none;
+  }
+
+  .side {
+    min-height: 50vh;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .decorativeMenuLeft,
+  .decorativeMenuRight {
+    display: none;
+    /* Hide decorative density on mobile for clarity */
+  }
+}

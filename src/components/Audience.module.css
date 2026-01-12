@@ -1,0 +1,134 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-dark);
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1.125rem;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Accent top border */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+}
+
+.iconWrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.iconGreen {
+    background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+}
+
+.iconPurple {
+    background: linear-gradient(135deg, #9F7AEA 0%, #805AD5 100%);
+}
+
+.cardTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.cardText {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.list {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.checkBg {
+    width: 24px;
+    height: 24px;
+    background: #E6FFFA;
+    color: #38A169;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: gap 0.2s ease;
+    margin-top: 10px;
+}
+
+.link:hover {
+    gap: 12px;
+    color: var(--primary);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
