@@ -121,6 +121,7 @@
 .highlight {
     color: #3182CE;
     background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
