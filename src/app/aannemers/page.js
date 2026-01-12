@@ -3,14 +3,43 @@
 import Link from "next/link";
 import {
     ArrowRight, ArrowLeft, CheckCircle, Smartphone, Database, FileText,
-    Mail, MessageSquare, PhoneMissed, Play, Check, CheckCheck, Clock,
-    HardHat, Video, Phone, Plus, Camera, Mic, Brain
+    Mail, MessageSquare, PhoneMissed, Play, Check, CheckCheck, Clock, HardHat, Video, Phone, Plus, Camera, Mic, Brain,
+    ChevronDown, User, ShieldCheck, Zap
 } from "lucide-react";
 import styles from "./page.module.css";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import { PopupModal } from "react-calendly";
 import { useState, useEffect } from "react";
+
+// FAQ Item Component
+const FAQItem = ({ question, answer }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className={styles.faqItem}>
+            <button className={styles.faqQuestion} onClick={() => setIsOpen(!isOpen)}>
+                {question}
+                <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <ChevronDown size={20} />
+                </motion.div>
+            </button>
+            <motion.div
+                initial={false}
+                animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ overflow: 'hidden' }}
+            >
+                <div className={styles.faqAnswer}>
+                    {answer}
+                </div>
+            </motion.div>
+        </div>
+    );
+};
 
 // Concept Version: High-Fidelity, Smooth Animations, "Glass" aesthetics
 export default function AannemersConceptPage() {
@@ -195,6 +224,18 @@ export default function AannemersConceptPage() {
                     </div>
                 </div>
             </section>
+
+            {/* NEW: Integration Trusted Strip */}
+            <div className={styles.trustStrip}>
+                <div className="container">
+                    <p className={styles.trustLabel}>WIJ INTEGREREN NAADLOOS MET:</p>
+                    <div className={styles.logoGrid}>
+                        {["Exact Online", "Moneybird", "Realworks", "2BA", "Gripp", "Offorte"].map((name, i) => (
+                            <span key={i} className={styles.trustLogo}>{name}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
 
             {/* SECTION HEADER: Solutions */}
             <div className={styles.sectionHeader}>
@@ -484,6 +525,61 @@ export default function AannemersConceptPage() {
                                 </div>
                             </motion.div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW: Founder Section */}
+            <section className={styles.founderSection}>
+                <div className="container">
+                    <div className={styles.founderGrid}>
+                        <div className={styles.founderImageContainer}>
+                            <div className={styles.founderGlow} />
+                            <img src="/niek-profile.png" alt="Niek - Oprichter CrispFlows" className={styles.founderImage} />
+                            <div className={styles.founderBadge}>
+                                <User size={16} /> Oprichter
+                            </div>
+                        </div>
+                        <div className={styles.founderContent}>
+                            <h2 className={styles.founderTitle}>Van Hovenier naar <span className={styles.gradientText}>AI Specialist</span></h2>
+                            <p className={styles.founderText}>
+                                "Na mijn studie Sales & Marketing startte ik - tegen de stroom in - mijn eigen hoveniersbedrijf. Ik wilde met mijn handen werken.
+                                Maar al snel zag ik de realiteit: <strong>vakmanschap verzuipt vaak in administratie.</strong>"
+                            </p>
+                            <p className={styles.founderText}>
+                                Na de verkoop van mijn bedrijf besloot ik dat op te lossen. Ik begon met het automatiseren van mijn eigen agency (van 4 uur naar 30 minuten werk per week) en bouwde offertesystemen voor hoveniers.
+                                Nu bouw ik met CrispFlows de tools die ik <i>zelf</i> had willen hebben: systemen die rust brengen, zodat jij weer kunt bouwen.
+                            </p>
+                            <div className={styles.founderSign}>
+                                <p>Niek Spekreijse</p>
+                                <span>CrispFlows.nl</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW: FAQ Section */}
+            <section className={styles.faqSection}>
+                <div className="container">
+                    <div className={styles.sectionHeader} style={{ marginBottom: '3rem' }}>
+                        <span className={styles.sectionLabel}>FAQ</span>
+                        <h2 className={styles.sectionTitle}>Veelgestelde Vragen</h2>
+                    </div>
+
+                    <div className={styles.accordion}>
+                        <FAQItem
+                            question="Kan ik mijn eigen software blijven gebruiken?"
+                            answer="Ja, absoluut. Onze kracht is juist dat we integreren met jouw bestaande systemen (zoals Exact, Moneybird, etc.). We bouwen de 'lijm' tussen je programma's, we vervangen ze niet."
+                        />
+                        <FAQItem
+                            question="Is dit een standaard pakket of maatwerk?"
+                            answer="Het is maatwerk op basis van bewezen bouwstenen. We geloven niet in 'one size fits all'. Jouw proces is uniek, dus onze oplossing sluit daar naadloos op aan. Zo win je vanaf dag 1 direct tijd."
+                        />
+                        <FAQItem
+                            question="Hoe ziet het traject eruit?"
+                            answer="We beginnen altijd met een strategiegesprek om jouw knelpunten te begrijpen. Daarna ontvang je een voorstel met 'Quick Wins' (direct resultaat) en lange termijn doelen. Geen wollige taal, maar een concreet plan."
+                        />
                     </div>
                 </div>
             </section>

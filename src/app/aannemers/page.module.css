@@ -178,6 +178,7 @@
         align-items: center;
     }
 
+
     .heroVisualContainer {
         height: 300px;
         /* Smaller visual on mobile */
@@ -210,9 +211,7 @@
     border: 1px solid #E2E8F0;
     padding: 16px 32px;
     border-radius: 100px;
-    font-weight: 600;
-    color: #4A5568;
-    cursor: pointer;
+    gap: 2rem;
 }
 
 /* FEATURE SECTIONS */
@@ -222,16 +221,16 @@
     border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.darkerBg {
+.featureSection.darkerBg {
     background: #1A202C;
     color: white;
 }
 
-.darkerBg .number {
+.featureSection.darkerBg .number {
     color: rgba(255, 255, 255, 0.1);
 }
 
-.darkerBg p {
+.featureSection.darkerBg p {
     color: #A0AEC0;
 }
 
@@ -242,11 +241,11 @@
     align-items: center;
 }
 
-.reversed .textColumn {
+.featureGrid.reversed .textColumn {
     order: 2;
 }
 
-.reversed .visualColumn {
+.featureGrid.reversed .visualColumn {
     order: 1;
 }
 
