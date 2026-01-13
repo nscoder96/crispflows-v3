@@ -1,0 +1,213 @@
+/* Audit Section Styles */
+.section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #FAFAFA 0%, #EBF8FF 100%);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 80px;
+    align-items: center;
+}
+
+.textSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: #3182CE;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1A202C;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.intro {
+    font-size: 1.15rem;
+    color: #4A5568;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.benefit {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.benefitIcon {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3182CE;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+}
+
+.benefitContent h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A202C;
+    margin-bottom: 6px;
+}
+
+.benefitContent p {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+/* CTA Side */
+.ctaSide {
+    display: flex;
+    justify-content: center;
+}
+
+.ctaCard {
+    background: white;
+    border-radius: 32px;
+    padding: 48px 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+.ctaHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    color: #3182CE;
+}
+
+.ctaHeader span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #718096;
+}
+
+.duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #EBF8FF;
+    border-radius: 100px;
+    color: #2B6CB0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+}
+
+.checkList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkList li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #4A5568;
+}
+
+.checkList li::before {
+    content: "✓";
+    color: #38A169;
+    font-weight: 700;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(49, 130, 206, 0.25);
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(49, 130, 206, 0.35);
+}
+
+.ctaSubtext {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .ctaSide {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+    }
+
+    .ctaCard {
+        padding: 32px 24px;
+    }
+
+    .ctaButton {
+        padding: 16px 28px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,374 @@
+/* Solution Section Styles */
+.section {
+    padding: 100px 0;
+    background: white;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.label {
+    color: #3182CE;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1A202C;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #3182CE;
+    background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro {
+    font-size: 1.15rem;
+    color: #4A5568;
+    max-width: 600px;
+    margin: 24px auto 0;
+    line-height: 1.7;
+}
+
+/* Main Feature Card */
+.mainCard {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: center;
+    background: linear-gradient(135deg, #EBF8FF 0%, #E6FFFA 100%);
+    border-radius: 32px;
+    padding: 60px;
+    margin-bottom: 60px;
+}
+
+.mainCardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mainCardTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1A202C;
+}
+
+.mainCardSubtitle {
+    font-size: 1.1rem;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    border: 1px solid rgba(49, 130, 206, 0.1);
+}
+
+.stepNumber {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stepContent strong {
+    font-size: 1rem;
+    color: #1A202C;
+}
+
+.stepContent span {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.testimonial {
+    margin-top: 24px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    border-left: 4px solid #3182CE;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #2D3748;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.testimonial cite {
+    font-size: 0.9rem;
+    color: #718096;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Phone Visual */
+.mainCardVisual {
+    display: flex;
+    justify-content: center;
+}
+
+.phoneFrame {
+    width: 280px;
+    height: 500px;
+    background: white;
+    border-radius: 40px;
+    border: 12px solid #1A202C;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.phoneNotch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 24px;
+    background: #1A202C;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 10;
+}
+
+.phoneContent {
+    height: 100%;
+    background: linear-gradient(180deg, #EBF8FF 0%, white 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    gap: 32px;
+}
+
+/* Chat/Notes Visual */
+.chatBubble {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    color: #3182CE;
+}
+
+.typingDots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 24px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #3182CE;
+    border-radius: 50%;
+}
+
+.notePreview {
+    width: 100%;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.noteLine {
+    height: 8px;
+    background: linear-gradient(90deg, #E2E8F0 0%, #CBD5E0 100%);
+    border-radius: 4px;
+}
+
+.processingSteps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.processStep {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.processStep.success {
+    background: #C6F6D5;
+    color: #22543D;
+}
+
+/* Features Grid */
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.featureCard {
+    background: #FAFAFA;
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.featureCard:hover {
+    background: white;
+    border-color: rgba(49, 130, 206, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.featureIcon {
+    width: 56px;
+    height: 56px;
+    background: #EBF8FF;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3182CE;
+    margin-bottom: 20px;
+}
+
+.featureTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1A202C;
+    margin-bottom: 12px;
+}
+
+.featureText {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+/* Closing Message */
+.closing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 40px;
+    background: #C6F6D5;
+    border-radius: 100px;
+    color: #22543D;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+.closing p {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .mainCard {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .mainCardVisual {
+        order: -1;
+    }
+
+    .phoneFrame {
+        width: 240px;
+        height: 420px;
+    }
+
+    .featuresGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .mainCard {
+        padding: 28px;
+        border-radius: 24px;
+    }
+
+    .mainCardTitle {
+        font-size: 1.5rem;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .closing {
+        padding: 20px 28px;
+        border-radius: 20px;
+    }
+
+    .closing p {
+        font-size: 1rem;
+    }
+}

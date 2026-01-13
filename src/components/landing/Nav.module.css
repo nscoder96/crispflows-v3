@@ -1,0 +1,46 @@
+/* Nav Styles */
+.nav {
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: #000;
+}
+
+.brand {
+    font-weight: 900;
+    font-size: 1rem;
+    color: #1A202C;
+}
+
+.sector {
+    color: #3182CE;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .backLink {
+        font-size: 0.9rem;
+    }
+
+    .brand {
+        font-size: 0.9rem;
+    }
+}

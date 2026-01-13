@@ -1,0 +1,8 @@
+/* ZZP Page Styles */
+.main {
+    background: #FAFAFA;
+    min-height: 100vh;
+    color: #111;
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+}

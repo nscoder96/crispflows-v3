@@ -1,0 +1,9 @@
+export { default as Nav } from './Nav';
+export { default as HeroSection } from './HeroSection';
+export { default as TrustStrip } from './TrustStrip';
+export { default as ProblemSection } from './ProblemSection';
+export { default as SolutionSection } from './SolutionSection';
+export { default as AuditSection } from './AuditSection';
+export { default as FounderSection } from './FounderSection';
+export { default as FAQSection } from './FAQSection';
+export { default as CTASection } from './CTASection';
