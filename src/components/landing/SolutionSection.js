@@ -135,6 +135,21 @@ export default function SolutionSection({
                     </div>
                 </motion.div>
 
+                {/* CTA Button - After testimonial, before features */}
+                {ctaText && onCTAClick && (
+                    <motion.div
+                        className={styles.ctaWrapper}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        <button onClick={onCTAClick} className={styles.ctaButton}>
+                            {ctaText} <ArrowRight size={20} />
+                        </button>
+                    </motion.div>
+                )}
+
                 {/* Other Features Grid */}
                 {otherFeatures && otherFeatures.length > 0 && (
                     <div className={styles.featuresGrid}>
@@ -171,21 +186,6 @@ export default function SolutionSection({
                     >
                         <CheckCircle size={24} />
                         <p>{closingMessage}</p>
-                    </motion.div>
-                )}
-
-                {/* CTA Button */}
-                {ctaText && onCTAClick && (
-                    <motion.div
-                        className={styles.ctaWrapper}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <button onClick={onCTAClick} className={styles.ctaButton}>
-                            {ctaText} <ArrowRight size={20} />
-                        </button>
                     </motion.div>
                 )}
             </div>
