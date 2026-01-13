@@ -212,7 +212,7 @@ export default function MKBPage() {
             <TrustStrip />
 
             <ProblemSection
-                title="Herkenbaar voor groeiende bedrijven?"
+                title="Herken je dit?"
                 problems={problems}
                 {...problemStats}
             />
