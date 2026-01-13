@@ -72,6 +72,13 @@ export default function SolutionSection({
                                 <cite>— {testimonial.author}</cite>
                             </blockquote>
                         )}
+
+                        {/* CTA Button - Direct after testimonial */}
+                        {ctaText && onCTAClick && (
+                            <button onClick={onCTAClick} className={styles.ctaButtonInline}>
+                                {ctaText} <ArrowRight size={20} />
+                            </button>
+                        )}
                     </div>
 
                     <div className={styles.mainCardVisual}>
@@ -134,21 +141,6 @@ export default function SolutionSection({
                         </div>
                     </div>
                 </motion.div>
-
-                {/* CTA Button - After testimonial, before features */}
-                {ctaText && onCTAClick && (
-                    <motion.div
-                        className={styles.ctaWrapper}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                        <button onClick={onCTAClick} className={styles.ctaButton}>
-                            {ctaText} <ArrowRight size={20} />
-                        </button>
-                    </motion.div>
-                )}
 
                 {/* Other Features Grid */}
                 {otherFeatures && otherFeatures.length > 0 && (

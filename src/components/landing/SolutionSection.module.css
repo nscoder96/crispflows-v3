@@ -319,7 +319,30 @@
     font-weight: 700;
 }
 
-/* CTA Button */
+/* CTA Button Inline (inside mainCard, after testimonial) */
+.ctaButtonInline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(49, 130, 206, 0.3);
+    margin-top: 24px;
+}
+
+.ctaButtonInline:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(49, 130, 206, 0.4);
+}
+
+/* CTA Button (legacy, keep for compatibility) */
 .ctaWrapper {
     text-align: center;
     margin-bottom: 60px;
@@ -384,6 +407,13 @@
 
     .mainCardTitle {
         font-size: 1.5rem;
+    }
+
+    .ctaButtonInline {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
     }
 
     .featuresGrid {
