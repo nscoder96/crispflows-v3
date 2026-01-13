@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, Calculator, FileText, CheckCircle, Mail, Calendar, Receipt, LayoutDashboard } from "lucide-react";
+import { MessageSquare, Calculator, FileText, CheckCircle, Mail, Calendar, Receipt, LayoutDashboard, ArrowRight } from "lucide-react";
 import styles from "./SolutionSection.module.css";
 
 const featureIconMap = {
@@ -19,7 +19,9 @@ export default function SolutionSection({
     mainFeature,
     testimonial,
     otherFeatures,
-    closingMessage
+    closingMessage,
+    ctaText,
+    onCTAClick
 }) {
     return (
         <section className={styles.section}>
@@ -169,6 +171,21 @@ export default function SolutionSection({
                     >
                         <CheckCircle size={24} />
                         <p>{closingMessage}</p>
+                    </motion.div>
+                )}
+
+                {/* CTA Button */}
+                {ctaText && onCTAClick && (
+                    <motion.div
+                        className={styles.ctaWrapper}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                        <button onClick={onCTAClick} className={styles.ctaButton}>
+                            {ctaText} <ArrowRight size={20} />
+                        </button>
                     </motion.div>
                 )}
             </div>

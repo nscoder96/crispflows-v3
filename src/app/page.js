@@ -9,6 +9,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.center}>
         <div className={styles.brand}>CRISPFLOWS</div>
+        <p className={styles.tagline}>AI-automatisering voor hoveniers & aannemers</p>
         <h1 className={styles.title}>HOEVEEL<br />MEDEWERKERS?</h1>
       </div>
 

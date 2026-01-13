@@ -217,7 +217,11 @@ export default function MKBPage() {
                 {...problemStats}
             />
 
-            <SolutionSection {...solutionContent} />
+            <SolutionSection
+                {...solutionContent}
+                ctaText="Vraag je gratis audit aan"
+                onCTAClick={openCalendly}
+            />
 
             <AuditSection
                 {...auditContent}

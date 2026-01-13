@@ -28,10 +28,19 @@
 .brand {
   font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   letter-spacing: 0.1em;
   opacity: 0.9;
   color: white;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -264,8 +273,15 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .main {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
+    overflow: hidden;
+  }
+
   .splitLayout {
     flex-direction: column;
+    flex: 1;
   }
 
   .center {
@@ -273,13 +289,25 @@
     top: 0;
     left: 0;
     transform: none;
-    padding: 50px 20px 30px;
+    padding: 24px 20px 16px;
     background: #000;
     mix-blend-mode: normal;
+    flex-shrink: 0;
+  }
+
+  .brand {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 0;
   }
 
   .splitLayout:hover .side,
@@ -289,16 +317,38 @@
   }
 
   .side {
-    min-height: 50vh;
+    flex: 1;
+    min-height: 0; /* Allow flex to control height */
+  }
+
+  .sideContent {
+    padding-top: 0;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.15em;
   }
 
   .heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .cta {
+    font-size: 0.9rem;
+    padding: 12px 24px;
   }
 
   .decorativeMenuLeft,
   .decorativeMenuRight {
     display: none;
-    /* Hide decorative density on mobile for clarity */
+  }
+
+  .dock {
+    display: none;
   }
 }
