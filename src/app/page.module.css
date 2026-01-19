@@ -1,354 +1,238 @@
 /* Main Container */
 .main {
-  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111827 100%);
+  color: white;
+  font-family: var(--font-inter), system-ui, sans-serif;
   display: flex;
   flex-direction: column;
-  background: #0A0A0A;
-  color: white;
-  overflow: hidden;
-  position: relative;
-  font-family: var(--font-inter), sans-serif;
 }
 
-/* Center Overlay */
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 30;
-  /* Higher than sides */
-  width: 100%;
-  max-width: 900px;
-  pointer-events: none;
-  mix-blend-mode: difference;
+/* Header */
+.header {
+  padding: 24px 40px;
+  display: flex;
+  justify-content: center;
 }
 
-.brand {
-  font-size: 1.25rem;
+.logo {
+  font-size: 1.1rem;
   font-weight: 800;
-  margin-bottom: 8px;
-  letter-spacing: 0.1em;
-  opacity: 0.9;
+  letter-spacing: 0.15em;
   color: white;
+}
+
+/* Hero Section */
+.hero {
+  flex: 0 0 auto;
+  padding: 60px 40px 50px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tagline {
   font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  opacity: 0.5;
-  color: white;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #60a5fa;
   margin-bottom: 20px;
 }
 
 .title {
-  font-size: 5rem;
-  /* Larger title */
-  font-weight: 900;
-  line-height: 0.9;
-  margin-bottom: 20px;
-  color: white;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
 }
 
-/* Split Layout */
-.splitLayout {
-  display: flex;
-  height: 100%;
-  width: 100%;
+.highlight {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.side {
+.subtitle {
+  font-size: 1.15rem;
+  color: #9ca3af;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* Routes Section */
+.routes {
   flex: 1;
-  position: relative;
-  transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 40px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.routesIntro {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.routeCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.routeCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 36px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.routeCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Center horizontally by default */
-  overflow: hidden;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Hover Effects */
-.splitLayout:hover .side {
-  flex: 0.8;
-  filter: brightness(0.7) blur(1px);
-  /* Slight blur to non-focused side */
-}
-
-.splitLayout .side:hover {
-  flex: 1.4;
-  filter: brightness(1) blur(0);
-}
-
-/* Specific Sides */
-.left {
-  background: #FFFFFF;
-  color: #000000;
-}
-
-.right {
-  background: #020617;
-  /* Even darker blue */
-  color: #FFFFFF;
-}
-
-/* Background Patterns */
-.bgPatternLeft {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Subtle geometric pattern or gradient */
-  background: radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.bgPatternRight {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  /* Glowing burst effect */
-  background:
-    radial-gradient(circle at 60% 50%, rgba(56, 189, 248, 0.15), transparent 60%),
-    radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.1), transparent 50%);
-  pointer-events: none;
-}
-
-/* Content within sides */
-.sideContent {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* Changed from center to flex-start */
-  align-items: center;
-  /* Center main content */
-  padding-top: 12vh;
-  /* Move content up significantly */
-  opacity: 1;
-  transition: transform 0.4s ease;
-}
-
-.side:hover .sideContent {
-  transform: translateY(-10px) scale(1.02);
-  /* Slight lift on hover */
-}
-
-.heroTextLeft,
-.heroTextRight {
-  text-align: center;
-  position: relative;
-  z-index: 20;
-}
-
-/* Typography polish */
-.label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
   margin-bottom: 24px;
-  font-weight: 700;
-  opacity: 0.6;
+  color: #60a5fa;
 }
 
-.heading {
-  font-size: 4rem;
-  /* Bigger headers */
-  font-weight: 800;
-  line-height: 0.9;
-  margin-bottom: 40px;
-  letter-spacing: -0.03em;
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 16px 32px;
-  border-radius: 100px;
-  transition: all 0.2s ease;
-  background: transparent;
-  border: 2px solid currentColor;
-}
-
-/* Explicit Hover States for Buttons */
-.side:hover .cta {
-  /* Base transition handled by specific sides */
-}
-
-.left:hover .cta {
-  background: #000000;
-  color: #FFFFFF;
-  border-color: #000000;
-}
-
-.right:hover .cta {
-  background: #FFFFFF;
-  color: #0F172A;
-  border-color: #FFFFFF;
-}
-
-
-/* Decorative Menus (The "Interface" look) */
-.decorativeMenuLeft {
-  position: absolute;
-  left: 40px;
-  bottom: 10vh;
-  /* Moved to bottom to balance the top content */
-  top: auto;
-  transform: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  opacity: 0.6;
-  /* Subtle */
-  pointer-events: none;
-  text-align: left;
-}
-
-.decorativeMenuRight {
-  position: absolute;
-  right: 40px;
-  bottom: 10vh;
-  /* Moved to bottom */
-  top: auto;
-  transform: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-end;
-  /* Align right */
-  opacity: 0.7;
-  /* Slightly brighter on dark */
-  pointer-events: none;
-  text-align: right;
-}
-
-.menuItem {
+.cardLabel {
   font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #60a5fa;
+  transition: gap 0.2s ease;
+}
+
+.routeCard:hover .cardCta {
+  gap: 14px;
+}
+
+/* Trust Section */
+.trust {
+  padding: 32px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.trustItem {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #6b7280;
 }
 
-/* Floating Dock at Bottom */
-.dock {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  padding: 12px;
+.trustItem svg {
+  color: #4b5563;
+}
+
+.trustDivider {
+  width: 1px;
+  height: 20px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 40;
-}
-
-.dockItem {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .main {
-    height: 100vh;
-    height: 100dvh; /* Dynamic viewport height for mobile */
-    overflow: hidden;
+  .header {
+    padding: 20px 24px;
   }
 
-  .splitLayout {
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .center {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    padding: 24px 20px 16px;
-    background: #000;
-    mix-blend-mode: normal;
-    flex-shrink: 0;
-  }
-
-  .brand {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-  }
-
-  .tagline {
-    font-size: 0.7rem;
-    margin-bottom: 12px;
+  .hero {
+    padding: 40px 24px 30px;
   }
 
   .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .routes {
+    padding: 30px 24px 50px;
+  }
+
+  .routeCards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .routeCard {
+    padding: 28px;
+  }
+
+  .cardTitle {
     font-size: 1.5rem;
-    margin-bottom: 0;
   }
 
-  .splitLayout:hover .side,
-  .splitLayout .side:hover {
-    flex: 1;
-    filter: none;
+  .trust {
+    padding: 24px;
+    gap: 20px;
   }
 
-  .side {
-    flex: 1;
-    min-height: 0; /* Allow flex to control height */
-  }
-
-  .sideContent {
-    padding-top: 0;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .label {
-    font-size: 0.7rem;
-    margin-bottom: 12px;
-    letter-spacing: 0.15em;
-  }
-
-  .heading {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .cta {
-    font-size: 0.9rem;
-    padding: 12px 24px;
-  }
-
-  .decorativeMenuLeft,
-  .decorativeMenuRight {
+  .trustDivider {
     display: none;
   }
 
-  .dock {
-    display: none;
+  .trustItem {
+    font-size: 0.85rem;
   }
 }
